@@ -18,6 +18,7 @@
         <profile>
             <id>desarrollo</id>
             <properties>
+                <elcolor>amarillo</elcolor>
             </properties>
             <dependencies>
                 <dependency>
@@ -33,6 +34,7 @@
         <profile>
             <id>produccion</id>
             <properties>
+                <elcolor>verde</elcolor>
             </properties>
             <dependencies>
                 <dependency>
@@ -43,5 +45,24 @@
             </dependencies>
         </profile>
     </profiles>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.fernandopaniagua.demoprofiles.Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
